@@ -7,7 +7,7 @@
  * ---------------------------------------------------------------------
  * Copyright (C) 2014 Pieter Kelchtermans (pieter at kunselhof.be)
  *               2011, 2014 Tino Kluge (ttk448 at gmail.com)
- * 
+ *
  *  This program is free software; you can redistribute it and/or
  *  modify it under the terms of the GNU General Public License
  *  as published by the Free Software Foundation; either version 2
@@ -227,8 +227,8 @@ func (s *Spline) Set_points(x []float64, y []float64, cubic_spline bool) {
 	n := len(x)
 
 	// TODO sort x and y, rather than returning an error
-	for i:=0; i<n-1; i++ {
-		if !(s.m_x[i]<s.m_x[i+1]) {
+	for i := 0; i < n-1; i++ {
+		if !(s.m_x[i] < s.m_x[i+1]) {
 			log.Fatal("input not sorted")
 		}
 	}
@@ -290,7 +290,6 @@ func (s *Spline) Operate(x float64) float64 {
 	}
 	it := sort.SearchFloat64s(s.m_x, x)
 	idx := int(math.Max(float64(it-1), 0))
-
 
 	h := x - s.m_x[idx]
 	var interpol float64
